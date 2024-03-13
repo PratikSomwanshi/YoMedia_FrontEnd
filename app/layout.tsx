@@ -4,6 +4,8 @@ import "./globals.css";
 import { getSession } from "@/actions/userActions";
 import NavbarMain from "@/components/navbarMain";
 import SideNavbar from "@/components/sideNavbar";
+import { permanentRedirect, redirect, usePathname } from "next/navigation";
+import Layout from "@/components/layoutSub";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,22 +19,10 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const session = await getSession();
-
     return (
         <html lang="en">
             <body className={inter.className}>
-                {!session.isLoggedIn ? (
-                    <>
-                        <NavbarMain />
-                        <section className="block c700:flex container gap-4">
-                            <SideNavbar />
-                            {children}
-                        </section>
-                    </>
-                ) : (
-                    <h1>Please Logged in</h1>
-                )}
+                <Layout children={children} />
             </body>
         </html>
     );

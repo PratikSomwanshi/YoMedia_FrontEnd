@@ -1,6 +1,6 @@
 "use client";
 
-import useStore from "@/app/store";
+import useStore from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -38,7 +38,7 @@ function SideNavbar() {
                 </div>
             </div>
             <Link href="/post">
-                <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md flex gap-4 items-center mb-[0.5rem]">
+                <div className="min-w-[16rem] hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md flex gap-4 items-center mb-[0.5rem]">
                     <Image
                         src="/aapp.jpg"
                         alt="something"

@@ -1,5 +1,5 @@
 "use client";
-import useStore from "@/app/store";
+import useStore from "@/store";
 import React, { useState } from "react";
 
 function Toggler() {
