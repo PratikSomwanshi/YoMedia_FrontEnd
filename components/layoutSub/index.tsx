@@ -1,12 +1,13 @@
+"use client";
 import React, { ReactNode } from "react";
 import NavbarMain from "../navbarMain";
 import SideNavbar from "../sideNavbar";
-import { getSession } from "@/actions/userActions";
+import { usePathname } from "next/navigation";
 
-async function Layout({ children }: { children: ReactNode }) {
-    const session = await getSession();
+function Layout({ children }: { children: ReactNode }) {
+    const path = usePathname();
 
-    if (!session.isLoggedIn) {
+    if (path === "/auth/register" || path === "/auth/login") {
         return <>{children}</>;
     }
 
