@@ -14,27 +14,27 @@ function SideNavbar() {
     return (
         <section className={toggle ? hide : unHide}>
             <div className="flex flex-col gap-1 mt-[0.5rem]">
-                <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black border-t-0 rounded-md cursor-pointer">
-                    <Link
-                        href="/post"
-                        className="underline underline-offset-2 font-medium ">
+                <Link
+                    href="/post"
+                    className="underline underline-offset-2 font-medium ">
+                    <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black border-t-0 rounded-md cursor-pointer">
                         POST
-                    </Link>
-                </div>
-                <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md cursor-pointer">
-                    <Link
-                        href="/post"
-                        className="underline underline-offset-2 font-medium ">
+                    </div>
+                </Link>
+                <Link
+                    href="/"
+                    className="underline underline-offset-2 font-medium ">
+                    <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md cursor-pointer">
                         Home
-                    </Link>
-                </div>
-                <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md cursor-pointer">
-                    <Link
-                        href="/post"
-                        className="underline underline-offset-2 font-medium ">
+                    </div>
+                </Link>
+                <Link
+                    href="/post"
+                    className="underline underline-offset-2 font-medium ">
+                    <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md cursor-pointer">
                         Messages
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             </div>
             <Link href="/post">
                 <div className="min-w-[16rem] hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md flex gap-4 items-center mb-[0.5rem]">
