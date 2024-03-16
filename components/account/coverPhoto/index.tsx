@@ -4,8 +4,11 @@ import React from "react";
 import { FaEdit } from "react-icons/fa";
 
 import ProfilePhoto from "../profilePhoto";
+import useStore from "@/store";
 
 function CoverPhoto() {
+    const { setCover } = useStore();
+
     function base64(file: File) {
         return new Promise<string | ArrayBuffer | null>((resolve, reject) => {
             const reader = new FileReader();
@@ -46,7 +49,11 @@ function CoverPhoto() {
                             type="file"
                             id="cover"
                             className="hidden"
-                            onChange={handleFileChange}
+                            onChange={(e) => {
+                                handleFileChange(e);
+                                if (e.target.files && e.target.files[0])
+                                    setCover(e.target.files[0]);
+                            }}
                         />
                         <FaEdit />
                         <span>edit </span>

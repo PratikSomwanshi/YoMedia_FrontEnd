@@ -1,3 +1,4 @@
+import useStore from "@/store";
 import Image from "next/image";
 import React from "react";
 import { FaEdit } from "react-icons/fa";
@@ -27,6 +28,8 @@ function ProfilePhoto() {
         }
     }
 
+    const { setProfile } = useStore();
+
     return (
         <div className="bg-red-300 z-10 h-32 w-32 rounded-full  absolute top-[50%] right-[7%]">
             <Image
@@ -44,7 +47,11 @@ function ProfilePhoto() {
                         type="file"
                         id="profile"
                         className="hidden"
-                        onChange={handleProfileChange}
+                        onChange={(e) => {
+                            handleProfileChange(e);
+                            if (e.target.files && e.target.files[0])
+                                setProfile(e.target.files[0]);
+                        }}
                     />
                     <FaEdit />
                     <span>edit </span>

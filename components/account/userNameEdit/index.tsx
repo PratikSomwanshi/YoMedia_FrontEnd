@@ -3,8 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import { FaEdit } from "react-icons/fa";
+import useStore from "@/store";
 
 function UserNameEdit() {
+    const {
+        setName,
+        account: { user_name },
+    } = useStore();
     const [openToEdit, setOpenToEdit] = React.useState(false);
     return (
         <div className="flex gap-2 items-end  w-3/4">
@@ -13,7 +18,8 @@ function UserNameEdit() {
                 <Input
                     type="text"
                     disabled={openToEdit ? false : true}
-                    value="xxuser_namexx"
+                    value={user_name}
+                    onChange={(e) => setName(e.target.value)}
                     className="mt-1 w-full"
                 />
             </div>

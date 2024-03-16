@@ -6,6 +6,7 @@ import NavbarMain from "@/components/navbarMain";
 import SideNavbar from "@/components/sideNavbar";
 import { permanentRedirect, redirect, usePathname } from "next/navigation";
 import Layout from "@/components/layoutSub";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default async function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <Layout children={children} />
+                <Footer />
             </body>
         </html>
     );

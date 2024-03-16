@@ -3,8 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import { FaEdit } from "react-icons/fa";
+import useStore from "@/store";
 
 function UserIDEdit() {
+    const {
+        account: { user_id },
+        setID,
+    } = useStore();
     const [openToEdit, setOpenToEdit] = React.useState(false);
     return (
         <div className="flex gap-2 items-end pr-8 pt-6 w-3/4">
@@ -13,7 +18,8 @@ function UserIDEdit() {
                 <Input
                     type="text"
                     disabled={openToEdit ? false : true}
-                    value="xxuser_IDxx"
+                    value={user_id}
+                    onChange={(e) => setID(e.target.value)}
                     className="mt-1 w-full"
                 />
             </div>
