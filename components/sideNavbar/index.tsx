@@ -1,7 +1,6 @@
 "use client";
 
 import useStore from "@/store";
-import Image from "next/image";
 import Link from "next/link";
 import DropDownAccount from "./dropDownAccount";
 
@@ -9,8 +8,9 @@ function SideNavbar() {
     const { toggle, toggler } = useStore();
 
     const hide =
-        "hidden h-[calc(100vh-4rem)] c900:flex flex-col justify-between";
-    const unHide = "h-[calc(100vh-4rem)] flex flex-col justify-between";
+        "hidden h-[calc(100vh-4.2rem)] c900:flex flex-col justify-between h-[calc(100vh-4rem)]";
+    const unHide =
+        "h-[calc(100vh-4.2rem)] flex flex-col justify-between h-screen";
 
     return (
         <section className={toggle ? hide : unHide}>
@@ -18,8 +18,15 @@ function SideNavbar() {
                 <Link
                     href="/post"
                     className="underline underline-offset-2 font-medium ">
-                    <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black border-t-0 rounded-md cursor-pointer">
+                    <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black  rounded-md cursor-pointer">
                         POST
+                    </div>
+                </Link>
+                <Link
+                    href="/search"
+                    className="underline underline-offset-2 font-medium ">
+                    <div className="hover:bg-slate-100 px-6 p-6 text-lg border border-black border-t-0 rounded-md cursor-pointer">
+                        Search
                     </div>
                 </Link>
                 <Link

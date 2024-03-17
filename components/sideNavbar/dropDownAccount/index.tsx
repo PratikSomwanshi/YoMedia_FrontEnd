@@ -20,7 +20,7 @@ function DropDownAccount() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <div className="min-w-[16rem] hover:bg-slate-100 px-6 p-6 text-lg border border-black  border-t-0 rounded-md flex gap-4 items-center mb-[0.5rem]">
+                <div className="min-w-[16rem] hover:bg-slate-100 px-6 p-6 text-lg border border-black   rounded-md flex gap-4 items-center mb-[0.5rem]">
                     <Image
                         src="/aapp.jpg"
                         alt="something"
@@ -33,7 +33,7 @@ function DropDownAccount() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[16rem] border-black rounded-md">
                 <DropdownMenuGroup>
-                    <Link href="/account" className="cursor-pointer">
+                    <Link href="/profile/user_id" className="cursor-pointer">
                         <DropdownMenuItem>
                             <DropdownMenuLabel>Account</DropdownMenuLabel>
                         </DropdownMenuItem>
